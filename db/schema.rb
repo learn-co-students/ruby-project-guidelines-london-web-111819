@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191129182138) do
+ActiveRecord::Schema.define(version: 2019_12_01_132704) do
 
   create_table "customers", force: :cascade do |t|
-    t.string  "username"
+    t.string "username"
     t.integer "balance"
+    t.integer "age"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string  "status"
+    t.string "status"
     t.integer "time_left"
     t.integer "cost"
     t.integer "customer_id"
@@ -27,7 +28,7 @@ ActiveRecord::Schema.define(version: 20191129182138) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string  "name"
+    t.string "name"
     t.integer "price"
     t.integer "prep_time"
     t.integer "store_id"
@@ -36,7 +37,7 @@ ActiveRecord::Schema.define(version: 20191129182138) do
 
   create_table "stores", force: :cascade do |t|
     t.string "name"
-    t.text   "menu"
+    t.text "menu"
   end
 
 end
