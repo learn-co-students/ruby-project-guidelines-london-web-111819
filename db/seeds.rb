@@ -8,11 +8,11 @@ end
 
     Store.create(
         name: "Cool Store",
-        menu: Store.cool_menu
+        # menu: Store.menu
     )
     Store.create(
         name: "Normal Store",
-        menu: Store.normal_menu
+        # menu: Store.menu
     )
 
 10.times do
@@ -20,6 +20,7 @@ end
         name: Faker::Cannabis.strain + " " + Faker::Cannabis.buzzword.capitalize,
         price: Faker::Number.within(range: 10..15),
         prep_time: Faker::Number.within(range: 30..60),
+        category: "Cannabis",
         store_id: 1
     )
 end
@@ -29,6 +30,7 @@ end
         name: Faker::DcComics.villain + " " + Faker::Beer.brand,
         price: Faker::Number.within(range: 15..100),
         prep_time: Faker::Number.within(range: 60..300),
+        category: "Drinks",
         store_id: 1
     )
 end

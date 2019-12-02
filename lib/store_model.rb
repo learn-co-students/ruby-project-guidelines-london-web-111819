@@ -4,11 +4,6 @@ class Store < ActiveRecord::Base
     has_many :customers, through: :orders
 
     def self.find_store(user_input)
-        if user_input == "HIGH"
-            user_input = 1
-        else
-            user_input = 2
-        end
         @chosen_store = Store.find_by(id: user_input)
     end
 
@@ -20,13 +15,15 @@ class Store < ActiveRecord::Base
         puts "\n
         Welcome to #{self.name}!\n
         "
+        if Store.chosen_store.id == 1
+          puts "based in Amsterdam,
+          "
+        end
     end
 
-    def self.cool_menu
-        # add later
-    end
+    # def self.category(user_input)
+    #     store = Product.where(store_id: @chosen_store.id, 
+    #         category: user_input)
+    # end
 
-    def self.normal_menu
-        # add later
-    end
 end

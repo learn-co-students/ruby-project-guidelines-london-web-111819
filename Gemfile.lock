@@ -18,6 +18,7 @@ GEM
     equatable (0.5.0)
     faker (2.8.0)
       i18n (>= 1.6, < 1.8)
+    gemoji (3.0.1)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     method_source (0.9.2)
@@ -69,6 +70,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 5.2)
   faker
+  gemoji
   pastel
   pry
   rake
