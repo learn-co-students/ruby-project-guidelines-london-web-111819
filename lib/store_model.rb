@@ -21,9 +21,13 @@ class Store < ActiveRecord::Base
         end
     end
 
-    # def self.category(user_input)
-    #     store = Product.where(store_id: @chosen_store.id, 
-    #         category: user_input)
-    # end
+    def self.category(user_input)
+        @product_category = Product.where(store_id: @chosen_store.id, 
+            category: user_input)
+    end
+
+    def self.product_category
+        @product_category
+    end
 
 end

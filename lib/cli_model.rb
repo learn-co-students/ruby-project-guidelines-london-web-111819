@@ -49,22 +49,23 @@ class CommandLineInterface
         Customer.logged_in_customer.view_profile
     end
 
-    # def menu_category
-    #     prompt = TTY::Prompt.new
-    #     category = prompt.select("Select your category:",
-    #     symbols: pointer) do |cat|
-    #         cat.choice "Cannabis", { menu }
-    #         cat.choice "Drinks", -> { menu }
-    #     end
-    #     Store.category(category)
-    # end
+    def menu_category
+        prompt = TTY::Prompt.new
+        category = prompt.select("Select your category:",
+        symbols: pointer) do |cat|
+            cat.choice "Cannabis"
+            cat.choice "Drinks"
+        end
+        Store.category(category)
+        menu
+    end
 
-    # def menu
-    #     prompt = TTY::Prompt.new
-    #     choices = 
-    #     menu = prompt.select("choose your product:", Store.category(category),
-    #     symbols: pointer)
-    # end
+    def menu
+        prompt = TTY::Prompt.new
+        choices = 
+        menu = prompt.select("choose your product:\n\n", Product.show_product_by_category,
+        symbols: pointer)
+    end
 
     private
 
