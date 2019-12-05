@@ -4,7 +4,7 @@ class Store < ActiveRecord::Base
     has_many :customers, through: :orders
 
     def self.find_store(user_input)
-        @chosen_store = Store.find_by(id: user_input)
+        @chosen_store = Store.find(user_input)
     end
 
     def self.chosen_store
@@ -18,7 +18,7 @@ class Store < ActiveRecord::Base
         if Store.chosen_store.id == 1
           puts "based in Amsterdam,
           "
-        end
+        end 
     end
 
     def self.category(user_input)
